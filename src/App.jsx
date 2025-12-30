@@ -7,6 +7,9 @@ const LandingPage = lazy(() => import('./pages/LandingPage'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const AccessPage = lazy(() => import('./pages/AccessPage'));
+const WhyCookies = lazy(() => import('./pages/WhyCookies'));
+const Troubleshooting = lazy(() => import('./pages/Troubleshooting'));
+const Help = lazy(() => import('./pages/Help'));
 
 // Loading fallback
 const Loading = () => (
@@ -27,8 +30,11 @@ const App = () => {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/why" element={<WhyCookies />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/troubleshooting" element={<Troubleshooting />} />
+          <Route path="/help" element={<Help />} />
           <Route path="/access" element={<AccessPage />} />
           {/* Redirect unknown routes to home */}
           <Route path="*" element={<LandingPage />} />
